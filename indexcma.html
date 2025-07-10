@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fantasy RPG: Business Decision Analysis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="loginPage">
+    <h1>Dragon's Keep Academy</h1>
+    <form id="registerForm">
+      <input type="text" id="regUser" placeholder="Create Username" required>
+      <input type="password" id="regPass" placeholder="Create Password" required>
+      <button type="button" onclick="registerUser()">Register</button>
+    </form>
+    <form id="loginForm">
+      <input type="text" id="logUser" placeholder="Enter Username" required>
+      <input type="password" id="logPass" placeholder="Enter Password" required>
+      <button type="button" onclick="loginUser()">Login</button>
+    </form>
+    <div id="loginMessage"></div>
+  </div>
+
+  <!-- Main Game Menu -->
+  <div id="gamePage" style="display:none;">
+    <h2>Welcome, <span id="playerName"></span> (Level <span id="playerLevel">1</span>)</h2>
+    <p>XP: <span id="playerXP">0</span></p>
+    <p>Choose a quest to begin your adventure:</p>
+    <ul id="questList">
+      <li><button onclick="startQuest('CVP')">Quest of Breakeven (CVP Analysis)</button></li>
+      <li><button onclick="startQuest('Marginal')">Quest of Margins (Marginal & Relevant Costs)</button></li>
+      <li><button onclick="startQuest('Pricing')">Quest of Markets (Pricing Strategy)</button></li>
+      <li><button onclick="startQuest('MakeBuy')">Quest of Choice (Make-or-Buy)</button></li>
+      <li><button onclick="startQuest('Opportunity')">Quest of Sacrifice (Opportunity Cost)</button></li>
+    </ul>
+    <button onclick="logoutUser()">Logout</button>
+  </div>
+
+  <!-- Quest/Quiz Screen -->
+  <div id="questPage" style="display:none;">
+    <h3 id="questTitle"></h3>
+    <p id="questStory"></p>
+    <div id="questionContainer"></div>
+    <button id="submitAnswer" onclick="submitAnswer()">Submit Answer</button>
+    <div id="answerResult"></div>
+    <button onclick="nextQuestion()">Next Question</button>
+    <button onclick="exitQuest()">Back to map</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
